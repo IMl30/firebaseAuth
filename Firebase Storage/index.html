@@ -1,0 +1,46 @@
+<html ng-app="sampleApp">
+
+<head>
+    <!-- AngularJS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>
+
+    <!-- AngularFire -->
+    <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
+    <script>
+        // Initialize the Firebase SDK
+        var config = {
+            apiKey: 'AIzaSyC0e3TOw9oXut97_vTKoSduaGKLfuKFDZA    ',
+            authDomain: 'http://cinematic-c47fe.firebaseapp.com',
+            databaseURL: 'https://cinematic-c47fe.firebaseio.com',
+            storageBucket: '<your-storage-bucket>'
+        };
+        firebase.initializeApp(config);
+    </script>
+<script src="index.js"></script>
+
+</head>
+
+<body ng-controller="SampleCtrl">
+    <!--<ul>
+      <li ng-repeat="message in messages">
+      
+        <input ng-model="message.text" ng-change="messages.$save(message)" />
+     
+        <button ng-click="messages.$remove(message)">Delete Message</button>
+      </li>
+    </ul>-->
+    <!-- push a new message onto the array -->
+    <div ng-repeat="message in messages">
+        <p>{{message.following}}</p>
+    </div>
+
+    <form ng-submit="addMessage()">
+        <input ng-model="newMessageText" />
+        <button type="submit">Add Message</button>
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<html ng-app="sampleApp">
+
+<head>
+    <!-- AngularJS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>
+
+    <!-- AngularFire -->
+    <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
+    <script>
+        // Initialize the Firebase SDK
+        var config = {
+            apiKey: 'AIzaSyC0e3TOw9oXut97_vTKoSduaGKLfuKFDZA    ',
+            authDomain: 'http://cinematic-c47fe.firebaseapp.com',
+            databaseURL: '<your-database-url>',
+            storageBucket: '<your-storage-bucket>'
+        };
+        firebase.initializeApp(config);
+    </script>
+<script src="index.js"></script>
+
+</head>
+
+<body ng-controller="SampleCtrl">
+ 
+ <div ng-app="sampleApp" ng-controller="SampleCtrl">
+  <button ng-click="signIn()">Sign In Anonymously</button>
+
+  <p ng-if="firebaseUser">Signed in user: <strong>{{ firebaseUser.uid }}</strong></p>
+  <p ng-if="error">Error: <strong>{{ error }}</strong></p>
+</div>
+
+</body>
+
+</html>
